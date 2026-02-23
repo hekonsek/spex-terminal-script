@@ -2,8 +2,6 @@ name: CI
 
 on:
   push:
-    branches:
-      - 'main'
   pull_request:
   workflow_dispatch:
 
@@ -11,15 +9,11 @@ jobs:
   CI:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Install pipx and Poetry
-        run: pipx install poetry
-      - name: Install project
-        run: poetry install
-      - name: Run check-depz
-        run: poetry run check-depz
-      - name: Run tests
-        run: poetry run pytest
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install spex
+        run: npm install -g https://github.com/hekonsek/spex/archive/refs/tags/v0.8.0.tar.gz
+
+      - name: Spex validate
+        run: spex validate
