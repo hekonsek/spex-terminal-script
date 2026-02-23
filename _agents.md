@@ -2,12 +2,8 @@
 
 ## Accessing logs from local filesystem 
 
-- If you can access `~/.cache/script` directory, it means that you can access terminal script session logs even without calling MCP server. Take advanatage of this fact and read these logs when needed.
+- Read `~/.cache/script` directory, to access terminal script session logs when needed.
 - You can also rely on Linux file timestamps to see when file was updated.
-
-## Accessing logs without access to local filesystem
-
-- If you can access `~/.cache/script` directory, you can should this MCP server to read logs resources.
 
 ## Logs format
 
@@ -16,8 +12,8 @@
 
 ## How to make use of terminal session script logs
 
-- When you are asked about some problem related to cli, check for recently updated terminal session scripts and see if you can see activities related to this topic.
-- Check primarily in the recent logs.
+- When you are asked about some problem related to CLI, check for recently updated terminal session scripts and see if you can see activities related to this topic.
+- Check primarily in the most recent logs. Fallback to older ones if necessary.
 
 ## Examples
 
